@@ -1,0 +1,43 @@
+<app-nav-bar></app-nav-bar>
+
+
+<div class="row ">
+  <div class="name w-30 h-20">
+     {{movie.movieName}}
+  </div>
+  <div class="image">
+    <img class="image w-30 h-36 r" [src]="movie.imageUrl">
+  </div>
+  <div class="row zoner">
+    <div class="col-1" *ngFor="let zone of movie.zoner">
+      <button mat-raised-button>{{zone}}</button>
+    </div>
+  </div>
+  <div class="description mb-3">
+    <span>{{movie.description}}</span>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="row director">
+    <div class="col-1 mt-3">
+      <h2>Directors</h2>
+    </div>
+    <div class="col-4">
+      <span>{{movie.directorName}}</span>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="row writer">
+  <div class="col-1 mt-3">
+    <h2>Writers</h2>
+  </div>
+  <div class="col-4">
+    <span>{{movie.writerName}}</span>
+  </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div>
+    <h2>Review</h2>
+    <h2>Rating</h2>
+  </div>
+</div>
+

@@ -1,0 +1,13 @@
+.text-danger{
+  color: red;
+}
+.submit-btn{
+  background-color: black;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  margin-right: 90%;
+  height: 35px;
+  width: 100px;
+
+}

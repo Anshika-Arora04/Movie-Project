@@ -1,0 +1,24 @@
+<app-nav-bar></app-nav-bar>
+<div class="row content">
+  <div class="col-md-2 col-sm-5 mt-4 ml-6 mr-2" *ngFor="let movie of movies">
+    <mat-card (click)="getMovieDetail(movie.id)">
+      <div class="row">
+        <div class="card-body pointer"  style="background-color:#707070;">
+            <img class="image" [src]="movie.imageUrl">
+                <div class="text">
+                  {{movie.movieName}}
+                </div>
+              </div>
+            </div>
+    </mat-card>
+  </div>
+  <!-- <div class="col-md-3 col-sm-6">
+
+  </div>
+  <div class="col-md-3 col-sm-6">
+
+  </div>
+  <div class="col-md-3 col-sm-6">
+
+  </div> -->
+</div>

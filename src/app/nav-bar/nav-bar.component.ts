@@ -1,0 +1,38 @@
+import { Component, OnInit } from '@angular/core';
+import { User } from '../model/user';
+import { NotifierService } from '../services/notifier.service';
+
+@Component({
+  selector: 'app-nav-bar',
+  templateUrl: './nav-bar.component.html',
+  styleUrls: ['./nav-bar.component.css']
+})
+export class NavBarComponent implements OnInit {
+  user :User;
+  role: string;
+
+  constructor(private notifier: NotifierService) { }
+
+  ngOnInit(): void {
+    this.role = localStorage.getItem('role');
+    console.log(this.role);
+
+  }
+
+  loggedIn() {
+    let UserArray = [];
+    if (localStorage.getItem('Users')){
+      UserArray = JSON.parse(localStorage.getItem('Users'));
+    }
+    var loggedInUser = localStorage.getItem('token');
+   this.user = UserArray.find(check => check.email === loggedInUser)
+    return this.user ;
+  }
+
+  onLogOut() {
+    this.notifier.showNotification("You're successfully logged out","Dismiss");
+   localStorage.removeItem('token');
+   localStorage.removeItem('role');
+   this.ngOnInit();
+  }
+}

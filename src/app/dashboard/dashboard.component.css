@@ -1,0 +1,21 @@
+
+.image{
+  height: 225px;
+  width: 200px;
+}
+.content{
+  padding-left: 5%;
+  background-color: #303030;
+}
+.text{
+  font-size: 15px;
+  padding-top: 15px;
+  font-weight: bolder;
+}
+.mat-card{
+  height: 315px;
+  width: 232px;
+}
+.pointer{
+  cursor: pointer;
+}

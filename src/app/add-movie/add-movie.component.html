@@ -1,0 +1,88 @@
+<app-nav-bar></app-nav-bar>
+
+<form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <div class='row row-content'>
+      <div class="col-12 col-md-6 left-container pt-4">
+        <div class='form-group row pt-3'>
+          <label for='movie' class='col-md-3 col-form-label'>Movie Name</label>
+          <div class='col-md-6'>
+            <input type='string' class='form-control' [class.is-invalid]="Error['movieName'].invalid && Error['movieName'].touched" formControlName="movieName" required>
+            <div class="text-danger"
+              *ngIf="Error['movieName'].invalid && (Error['movieName'].touched || Error['movieName'].dirty) || formNotSubmitted">
+              <div *ngIf="Error['movieName'].errors?.['required']"> Name is required </div>
+            </div>
+          </div>
+        </div>
+        <div class='form-group row pt-3'>
+          <label for='description' class='col-md-3 col-form-label'>Description</label>
+          <div class='col-md-6'>
+            <input type='string' class='form-control' [class.is-invalid]="Error['description'].invalid && Error['description'].touched" formControlName="description" required>
+            <div class="text-danger"
+              *ngIf="Error['description'].invalid && (Error['description'].touched || Error['description'].dirty) || formNotSubmitted">
+              <div *ngIf="Error['description'].errors?.['required']"> Description is required </div>
+            </div>
+          </div>
+        </div>
+        <div class='form-group row pt-3'>
+          <label for='director' class='col-md-3 col-form-label'>Director</label>
+          <div class='col-md-6'>
+            <input type='string' class='form-control' [class.is-invalid]="Error['directorName'].invalid && Error['directorName'].touched" formControlName="directorName" required>
+            <div class="text-danger"
+              *ngIf="Error['directorName'].invalid && (Error['directorName'].touched || Error['directorName'].dirty) || formNotSubmitted">
+              <div *ngIf="Error['directorName'].errors?.['required']">Please mention director's name </div>
+            </div>
+          </div>
+        </div>
+        <div class='form-group row pt-3'>
+          <label for='writerName' class='col-md-3 col-form-label'>Writer</label>
+          <div class='col-md-6'>
+            <input type='string' class='form-control' [class.is-invalid]="Error['writerName'].invalid && Error['writerName'].touched"formControlName="writerName" required>
+            <div class="text-danger"
+              *ngIf="Error['writerName'].invalid && (Error['writerName'].touched || Error['writerName'].dirty) || formNotSubmitted">
+              <div *ngIf="Error['writerName'].errors?.['required']"> Please mention writer's name. </div>
+            </div>
+          </div>
+        </div>
+        <div class='form-group row pt-3'>
+          <label for='releaseDate' class='col-md-3 col-form-label'>Release Date</label>
+          <div class='col-md-6'>
+            <input type='date' class='form-control' [class.is-invalid]="Error['releaseDate'].invalid && Error['releaseDate'].touched" formControlName="releaseDate" required>
+            <div class="text-danger"
+              *ngIf="Error['releaseDate'].invalid && (Error['releaseDate'].touched || Error['releaseDate'].dirty) || formNotSubmitted">
+              <div *ngIf="Error['releaseDate'].errors?.['required']"> Date is required </div>
+            </div>
+          </div>
+        </div>
+        <div class='form-group row pt-3'>
+          <label for='Image' class='col-md-3 col-form-label'>Image Url</label>
+          <div class='col-md-6'>
+            <input type="text" class='form-control' formControlName="imageUrl" (keyup)="onImageUrlPaste($event)"
+              required>
+              <div class="text-danger" *ngIf="Error['imageUrl'].invalid && (Error['imageUrl'].touched || Error['imageUrl'].dirty) || formNotSubmitted">
+              <div *ngIf="Error['imageUrl'].errors?.['required']"> Image is required </div>
+            </div>
+          </div>
+        </div>
+        <div class='form-group row pt-3'>
+          <label for='movieTypeList' class='col-md-3 col-form-label'>Movie Type</label>
+          <div class='col-md-6'>
+            <mat-form-field appearance="fill">
+              <mat-label>Select movie genre here</mat-label>
+              <mat-select formControlName="zoner" multiple>
+                <mat-option *ngFor="let genre of genreList" [value]="genre">{{genre}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="text-center pt-2">
+          <button type="submit" class='submit-btn'>Submit</button>
+        </div>
+      </div>
+      <div *ngIf="imageUrl !== '' && imageUrl != null " class="col-12 col-md-5 ml-4 right-container">
+        <h3 style="text-align:center; margin-top: 5%; margin-left: 115px;">Image will be shown here</h3><br>
+        <img style="position:absolute;  margin-left: 130px; height: 350px; width: 300px" class="border border-secondary rounded img" [src]="imageUrl" />
+      </div>
+    </div>
+  </div>
+</form>

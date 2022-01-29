@@ -1,0 +1,27 @@
+
+html{
+  overflow: hidden;
+}
+.card-body{
+  text-align: left;
+}
+.form-group{
+  text-align: left;
+}
+.submit-btn{
+  height: 40px;
+  background-color: goldenrod;
+  border-radius: 5px;
+}
+.row{
+  margin-top: 25px;
+}
+.card{
+  text-align: center;
+  margin-left: 35%;
+  margin-top: 8%;
+  height: 400px;
+}
+.text-danger{
+  color: red;
+}

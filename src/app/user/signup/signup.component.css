@@ -1,0 +1,45 @@
+.card-header{
+  text-align: left;
+}
+html{
+  overflow: hidden;
+}
+.card-body{
+  text-align: left;
+}
+.form-group{
+  text-align: left;
+}
+.submit-btn{
+  height: 40px;
+  background-color: goldenrod;
+  border-radius: 5px;
+}
+.row{
+  margin-top: 25px;
+}
+.row-error{
+  text-align: center;
+  border-color: red;
+  padding-left: 20px;
+  width: 600px;
+  align-items: center;
+}
+.error-heading{
+  margin-top: 10px;
+   color: red;
+}
+
+.card{
+  text-align: center;
+  margin-left: 10%;
+  height: 520x;
+}
+.text-danger{
+  color: red;
+}
+
+
+
+
+

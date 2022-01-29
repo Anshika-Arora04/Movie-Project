@@ -1,0 +1,45 @@
+.name{
+  height: 65px;
+  color: white;
+  padding-top: 3%;
+  font-size: 30px;
+}
+.image{
+  display: block;
+    height: 400px;
+    width: 300px;
+    padding-top: 2%;
+}
+.row{
+  background-color: #303030;
+  padding-left: 3%;
+}
+.zoner{
+  margin-top:48px;
+}
+.description{
+  color: white;
+  width: 61%;
+  font-size: 15px;
+  margin-top: 4%;
+}
+.col-4{
+padding-top: 22px;
+
+}
+.mat-divider{
+  border-top-color: lightslategray;
+  width: 60%;
+}
+.director{
+  padding-right: 10px;
+}
+span{
+  color: white;
+}
+h2{
+  color: white;
+}
+.divider{
+  color: white;
+}
