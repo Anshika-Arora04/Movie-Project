@@ -1,7 +1,7 @@
 <app-nav-bar></app-nav-bar>
-<div class="main-section h-100" style=" background-color:#303030;" >
+<div class="main-section h-100" style=" background-color:#303030;">
 
-<div class="container" style=" background-color:#303030;">
+  <div class="container" style=" background-color:#303030;">
     <div class="row row-content">
       <div class="col-12 pt-4">
         <h1 style="text-align:center; color: white;">Movies Details</h1><br>
@@ -14,14 +14,13 @@
           <div class="col-md-3 col-sm-6 pt-4">
             <h2>{{movie.movieName}}</h2>
           </div>
-          <div class="col-md-5 col-sm-6 pt-4"  style="max-height: 200px; overflow-y:auto; text-align: justify;">
+          <div class="col-md-5 col-sm-6 pt-4" style="max-height: 200px; overflow-y:auto; text-align: justify;">
             <span>{{ movie.description }}</span>
           </div>
           <div class="col-md-1 col-sm-6 ">
-              <button class="delete-btn" (click)="deleteMovie(movie)">Delete</button>
+            <button class="delete-btn" (click)="deleteMovie(movie)">Delete</button>
           </div>
         </div>
-        <!-- <h3 *ngIf="message" class="alert alert-danger" align="center">{{ message }}</h3> -->
       </div>
     </div>
   </div>

@@ -12,15 +12,14 @@ import { NotifierService } from 'src/app/services/notifier.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  isAuth=false;
-  formNotSubmitted:boolean = false;
+  isAuth = false;
+  formNotSubmitted: boolean = false;
 
   get Error() {
     return this.loginForm.controls;
   }
 
-  constructor(private formBuilder: FormBuilder,private notifier: NotifierService, private userService:UserService, private router: Router, private authService: AuthService)
-  {
+  constructor(private formBuilder: FormBuilder, private notifier: NotifierService, private userService: UserService, private router: Router, private authService: AuthService) {
     // if(this.formNotSubmitted)
     // {
     //   console.log("hellooooo")
@@ -37,17 +36,18 @@ export class LoginComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    // Static Admin Credentials:
     let adminDetail = {
       name: "Admin",
       email: "admin@gmail.com",
       password: "admin@123",
       confirmPassword: "admin@123",
-      role:"ADMIN"
+      role: "ADMIN"
     }
     this.userService.addUser(adminDetail);
   }
 
-    onLogin() {
+  onLogin() {
     console.log(this.loginForm.value);
     const token = this.authService.authUser(this.loginForm.value);
     if (token) {
@@ -56,8 +56,8 @@ export class LoginComponent implements OnInit {
       this.notifier.showNotification('Login Successfull', 'Dismiss');
       this.router.navigate(['/']);
     } else {
-      this.formNotSubmitted= true;
-      this.notifier.showNotification('Oops! Something went wrong. Please try again',"Dismiss");
+      this.formNotSubmitted = true;
+      this.notifier.showNotification('Oops! Something went wrong. Please try again', "Dismiss");
     }
   }
 }

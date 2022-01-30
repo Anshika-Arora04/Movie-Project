@@ -10,21 +10,37 @@ export class NotifierService {
 
   constructor(private snackBar: MatSnackBar, private matDialog: MatDialog) { }
 
-  showNotification(message: string, button: string){
+  //Notifies using alert messages on the screen.
+  showNotification(message: string, button: string) {
     this.snackBar.open(message, button,
-       {duration:2000, horizontalPosition:'right',verticalPosition:'bottom'}
+      { duration: 2000, horizontalPosition: 'right', verticalPosition: 'bottom' }
     );
   }
 
-  showDialogConfirmation(msg: string){
-     return this.matDialog.open(MatConfirmDialogComponent,{
-       width:'400px',
-       panelClass: 'confirm-dialog-container',
-       disableClose:true,
-       position:{top:'20px'},
-       data:{
-         message: msg
-       }
-     });
+  //Provides an extra dialog box for re-confirmation before deleting
+  showDialogConfirmation(msg: string) {
+    return this.matDialog.open(MatConfirmDialogComponent, {
+      width: '400px',
+      panelClass: 'confirm-dialog-container',
+      disableClose: true,
+      position: { top: '20px' },
+      data: {
+        message: msg,
+      }
+    });
   }
+
+  /*
+  Provide the dialog to rate the movie.
+  showRating(msg: string){
+    return this.matDialog.open(MatConfirmDialogComponent,{
+      width:'400px',
+      panelClass: 'confirm-dialog-container',
+      disableClose:true,
+      position:{top:'20px'},
+      data:{
+        message: msg
+      }
+    });
+  }*/
 }

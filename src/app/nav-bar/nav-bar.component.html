@@ -1,29 +1,33 @@
 <mat-toolbar style="background-color: black;">
-  <mat-icon style="background-color: white;" routerLink="dashboard" >dashboard</mat-icon>
-  <a mat-button style="color: white;" routerLink="dashboard"><h3>Movie</h3></a>
-   <div class="search-container">
-     <form role="search" method="get" class="search-form form" action="">
-       <div class="row">
+  <mat-icon style="background-color: white;" routerLink="dashboard" matTooltip="All Movies">dashboard</mat-icon>
+  <a mat-button style="color: white;" routerLink="dashboard">
+    <h3>Movie</h3>
+  </a>
+  <div class="search-container">
+    <div role="search" method="get" class="search-form form" action="">
+      <div class="row">
         <div class="col-sm-8">
-          <input type="search" style="height: 30px; margin-left: 100px;" class="search-field" placeholder="Type something..." />
+          <input type="search" class="search-field" [(ngModel)]="searchName" placeholder="Type something..." />
         </div>
         <div class="col-sm-4">
-          <mat-icon style="color: white; height: 50px; margin-top: 15px;">search</mat-icon>
+          <mat-icon class="search-icon" (click)="getSearchResults()">search</mat-icon>
         </div>
-       </div>
-    <mat-icon style="color: white; height: 50px; margin-top: 15px;">search</mat-icon>
-    </form>
+      </div>
+    </div>
   </div>
   <div class="spacer"></div>
   <a mat-button class="admin add" *ngIf="role =='ADMIN'" routerLink="add-movie">Add Movie</a>
-  <a mat-button class="admin show"  *ngIf="role =='ADMIN'" routerLink="show-movie">Show Movie</a>
+  <a mat-button class="admin show" *ngIf="role =='ADMIN'" routerLink="show-movie">Show Movie</a>
   <a mat-button style="color: white;" *ngIf="!loggedIn()" routerLink="login" routerLinkActive="active">Log In</a>
   <a mat-button style="color: white;" *ngIf="!loggedIn()" routerLink="signup" routerLinkActive="active">Sign Up</a>
-  <div *ngIf="loggedIn()" style="color: white; margin-right: 25px; font-size: 15px;" >
-    <a style="color: white;" >
+  <div *ngIf="loggedIn()" style="color: white; margin-right: 25px; font-size: 15px;">
+    <a style="color: white;">
       Welcome {{this.user.name}}
-    </a></div>
-    <div>
-      <a  *ngIf="loggedIn()" matTooltip="LogOut" (click)="onLogOut()"><mat-icon style="color: white; margin-top: 5px;">logout</mat-icon></a>
-    </div>
+    </a>
+  </div>
+  <div>
+    <a *ngIf="loggedIn()" matTooltip="LogOut" (click)="onLogOut()">
+      <mat-icon style="color: white; margin-top: 5px;">logout</mat-icon>
+    </a>
+  </div>
 </mat-toolbar>

@@ -14,7 +14,7 @@ import { NotifierService } from 'src/app/services/notifier.service';
 })
 export class SignupComponent implements OnInit {
 
-  formNotSubmitted: boolean= false;
+  formNotSubmitted: boolean = false;
   passwordNotSubmitted = false;
 
   get Error() {
@@ -24,16 +24,16 @@ export class SignupComponent implements OnInit {
   user: User;
 
 
-  constructor(private formBuilder: FormBuilder,private notifier: NotifierService, private userService: UserService, private route:Router) {}
+  constructor(private formBuilder: FormBuilder, private notifier: NotifierService, private userService: UserService, private route: Router) { }
 
   signUpForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"), Validators.maxLength(320)]],
     password: ['', [Validators.required, Validators.minLength(6)]],
     confirmPassword: ['', Validators.required]
-    },
+  },
     {
-     validator: ConfirmedValidator('password', 'confirmPassword')
+      validator: ConfirmedValidator('password', 'confirmPassword')
     }
   );
 
@@ -42,25 +42,26 @@ export class SignupComponent implements OnInit {
 
   }
   onSignIn() {
-     let userDetails = {
-      name : this.signUpForm.get('name').value,
-      email : this.signUpForm.get('email').value,
-      password : this.signUpForm.get('password').value,
-      confirmPassword : this.signUpForm.get('confirmPassword').value,
-      role : "USER",
+    let userDetails = {
+      name: this.signUpForm.get('name').value,
+      email: this.signUpForm.get('email').value,
+      password: this.signUpForm.get('password').value,
+      confirmPassword: this.signUpForm.get('confirmPassword').value,
+      role: "USER",
     }
     console.log(userDetails);
 
+    //Stores user data in local storage at the time of signIn :
     localStorage.setItem('User', JSON.stringify(userDetails));
     if (this.signUpForm.valid) {
       this.userService.addUser(userDetails);
       this.signUpForm.reset();
-      this.notifier.showNotification("You are successfully registered.","Dismiss")
+      this.notifier.showNotification("You are successfully registered.", "Dismiss")
       this.route.navigate(['/login']);
     } else {
-       this.notifier.showNotification("Oops! Something went wrong,try again.","Dismiss");
-      this.formNotSubmitted= true;
-      if (userDetails.confirmPassword == null){
+      this.notifier.showNotification("Oops! Something went wrong,try again.", "Dismiss");
+      this.formNotSubmitted = true;
+      if (userDetails.confirmPassword == null) {
         this.passwordNotSubmitted = true;
       }
     }

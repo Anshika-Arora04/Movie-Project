@@ -1,21 +1,23 @@
-
-.image{
+.image {
   height: 225px;
   width: 200px;
 }
-.content{
-  padding-left: 5%;
+.content {
+  padding-left: 3%;
   background-color: #303030;
 }
-.text{
+.row {
+  background-color: #303030;
+}
+.text {
   font-size: 15px;
   padding-top: 15px;
   font-weight: bolder;
 }
-.mat-card{
+.mat-card {
   height: 315px;
   width: 232px;
 }
-.pointer{
+.pointer {
   cursor: pointer;
 }

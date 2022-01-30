@@ -1,45 +1,40 @@
-.card-header{
+.card-header {
   text-align: left;
 }
-html{
+html {
   overflow: hidden;
 }
-.card-body{
+.card-body {
   text-align: left;
 }
-.form-group{
+.form-group {
   text-align: left;
 }
-.submit-btn{
+.submit-btn {
   height: 40px;
   background-color: goldenrod;
   border-radius: 5px;
 }
-.row{
+.row {
   margin-top: 25px;
 }
-.row-error{
+.row-error {
   text-align: center;
   border-color: red;
   padding-left: 20px;
   width: 600px;
   align-items: center;
 }
-.error-heading{
+.error-heading {
   margin-top: 10px;
-   color: red;
+  color: red;
 }
 
-.card{
+.card {
   text-align: center;
   margin-left: 10%;
   height: 520x;
 }
-.text-danger{
+.text-danger {
   color: red;
 }
-
-
-
-
-

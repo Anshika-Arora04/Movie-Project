@@ -1,45 +1,50 @@
-.name{
+.name {
   height: 65px;
   color: white;
   padding-top: 3%;
-  font-size: 30px;
+  margin-left: 10px;
+  font-size: 38px;
 }
-.image{
+.image {
   display: block;
-    height: 400px;
-    width: 300px;
-    padding-top: 2%;
+  height: 550px;
+  width: 450px;
+  padding-top: 2%;
 }
-.row{
+.row {
   background-color: #303030;
-  padding-left: 3%;
+  padding-left: 2%;
 }
-.zoner{
-  margin-top:48px;
+.zoner {
+  margin-top: 50px;
 }
-.description{
+.description {
   color: white;
   width: 61%;
   font-size: 15px;
   margin-top: 4%;
 }
-.col-4{
-padding-top: 22px;
-
+.col-4 {
+  padding-top: 22px;
 }
-.mat-divider{
+.col-3 {
+  padding-top: 22px;
+  padding-right: 30px;
+  text-align: start;
+}
+.mat-divider {
   border-top-color: lightslategray;
   width: 60%;
 }
-.director{
+.director {
   padding-right: 10px;
 }
-span{
+span {
   color: white;
 }
-h2{
+h3 {
   color: white;
 }
-.divider{
+.divider {
   color: white;
 }
