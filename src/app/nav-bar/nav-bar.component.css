@@ -24,10 +24,10 @@
   font-size: 15px;
 }
 .add {
-  padding-left: 112px;
+  margin-left: 200px;
 }
 .show {
-  padding-left: 50px;
+  padding-right: 5%;
 }
 .container {
   padding: 3rem;
