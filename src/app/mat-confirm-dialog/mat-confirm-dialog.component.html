@@ -1,4 +1,4 @@
-<div style="border-style: solid;">
+<div style="border-style: solid;" *ngIf="data.dialogType=='delete'">
   <div class="content-container">
     <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
     <span class="content-span full-width">{{data.message}}</span>
@@ -7,19 +7,18 @@
   <button mat-flat-button id="yes-button" [mat-dialog-close]="true">YES</button>
 </div>
 
-<!--
-  It will show the dialog for Movie Rating:
 
 <div *ngIf="data.dialogType=='star' ">
   <div class="row">
     <h4>{{data.movieName}}</h4>
-  <mat-card appearance="fill">
-    <button mat-icon-button [color]="starColor" *ngFor="let ratingId of ratingArr; index as i" (click)="onClick(i + 1)">
-      <mat-icon style="align-items: center;">
-        {{ showIcon(i) }}
-      </mat-icon>
-    </button>
-  </mat-card>
-  <button mat-button [mat-dialog-close]="rating">Rate</button>
+    <mat-card appearance="fill">
+      <button mat-icon-button [color]="starColor" *ngFor="let ratingId of ratingArr; index as i"
+        (click)="onClick(i + 1)">
+        <mat-icon style="align-items: center;" (click)="startClicked(i)">
+          {{ showIcon(i) }}
+        </mat-icon>
+      </button>
+    </mat-card>
+    <button mat-button [mat-dialog-close]="rating" (click)="onRate()">Rate</button>
   </div>
-</div> -->
+</div>

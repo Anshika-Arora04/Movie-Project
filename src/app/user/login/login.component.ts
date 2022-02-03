@@ -35,16 +35,20 @@ export class LoginComponent implements OnInit {
     password: ['', [Validators.required, Validators.minLength(6)]],
   });
 
-  ngOnInit(): void {
+  ngAfterViewInit() {
     // Static Admin Credentials:
     let adminDetail = {
       name: "Admin",
       email: "admin@gmail.com",
       password: "admin@123",
       confirmPassword: "admin@123",
-      role: "ADMIN"
+      role: "ADMIN",
+      userId: "1",
     }
     this.userService.addUser(adminDetail);
+  }
+  ngOnInit(): void {
+
   }
 
   onLogin() {

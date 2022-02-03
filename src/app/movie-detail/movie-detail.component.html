@@ -1,48 +1,86 @@
 <app-nav-bar></app-nav-bar>
-<div class="row ">
-  <div class="name w-30 h-20">
+
+<div class="row">
+  <div class=" row name">
     {{movie.movieName}}
   </div>
-  <div class="row">
+  <div class="col-md-6">
     <div class="image">
       <img class="image w-30 h-36 r" [src]="movie.imageUrl">
     </div>
-    <div class="row zoner">
-      <div class="col-1" *ngFor="let zone of movie.zoner">
-        <button mat-raised-button>{{zone}}</button>
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-3">
+        <div>
+          <span class="rate">Average Rating</span>
+
+          <button *ngIf="averageRating != null" class="btn btn-warning rate-btn" mat-button [color]="starColor">
+            <mat-icon>star</mat-icon>
+
+            <span>{{averageRating}}/5</span>
+          </button>
+          <button *ngIf="averageRating == null" class="btn btn-warning rate-btn" mat-button [color]="starColor">
+            <mat-icon>star</mat-icon>
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="description mb-3">
-      <span>{{movie.description}}</span>
-    </div>
-    <mat-divider></mat-divider>
-    <div class="row director">
-      <div class="col-1 mt-3">
-        <h3>Directors</h3>
+      <div class="col-md-3">
+        <div>
+          <span class="rate ml-2">Your Rating</span>
+          <button class="btn btn-info rate-btn" mat-button [color]="starColor" (click)="openDialog()"
+            *ngFor="let ratingId of ratingArr; index as i">
+            <mat-icon>star</mat-icon>
+            <span *ngIf="curentMovieRateAsPerUser == null">Rate</span>
+            <span *ngIf="curentMovieRateAsPerUser != null">{{curentMovieRateAsPerUser.movieRate}}/5</span>
+          </button>
+        </div>
       </div>
-      <div class="col-4">
-        <span>{{movie.directorName}}</span>
-      </div>
-    </div>
-    <mat-divider></mat-divider>
-    <div class="row writer">
-      <div class="col-1 mt-3">
-        <h3>Writers</h3>
-      </div>
-      <div class="col-4">
-        <span>{{movie.writerName}}</span>
-      </div>
-    </div>
-    <mat-divider></mat-divider>
-    <div class="row date">
-      <div class="col-2 mt-3">
-        <h3>Release Date </h3>
-      </div>
-      <div class="col-3 pr-4 mr-4">
-        <span>{{movie.releaseDate}}</span>
+      <div class="row">
+        <div class="row zoner ">
+          <div class="col-2" *ngFor="let zone of movie.zoner">
+            <button style="width: 80px;" mat-raised-button>{{zone}}</button>
+          </div>
+        </div>
+        <div class=" row description col-6">
+          <span>{{movie.description}}</span>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="row director">
+          <div class="col-3  ">
+            <h3>Directors</h3>
+          </div>
+          <div class="col-6">
+            <span>{{movie.directorName}}</span>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="row writer">
+          <div class="col-3">
+            <h3>Writers</h3>
+          </div>
+          <div class="col-6">
+            <span>{{movie.writerName}}</span>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="row date">
+          <div class="col-3">
+            <h3>Release Date </h3>
+          </div>
+          <div class="col-6">
+            <span>{{movie.releaseDate}}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <mat-divider></mat-divider>
-  <br><br>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="comment-section">
+        <h2 class="comment-heading">Comment here</h2>
+        <app-comment></app-comment>
+      </div>
+    </div>
+  </div>
 </div>

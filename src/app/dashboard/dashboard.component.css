@@ -21,3 +21,22 @@
 .pointer {
   cursor: pointer;
 }
+.zoner {
+  margin-top: 3%;
+  margin-right: 3%;
+  width: 90px;
+  margin-bottom: 4%;
+}
+.mat-flat-button {
+  border-radius: 10%;
+  background-color: lightcyan;
+  width: 100px;
+}
+.row {
+  padding-left: 3%;
+}
+.found {
+  font-size: 30px;
+  text-align: center;
+  color: white;
+}

@@ -2,7 +2,7 @@
   height: 65px;
   color: white;
   padding-top: 3%;
-  margin-left: 10px;
+  margin-left: 15px;
   font-size: 38px;
 }
 .image {
@@ -16,16 +16,18 @@
   padding-left: 2%;
 }
 .zoner {
-  margin-top: 50px;
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
 .description {
   color: white;
-  width: 61%;
+  width: 100%;
+  text-align: justify;
   font-size: 15px;
-  margin-top: 4%;
+  margin-bottom: 2%;
 }
-.col-4 {
-  padding-top: 22px;
+.col-6 {
+  margin-top: 27px;
 }
 .col-3 {
   padding-top: 22px;
@@ -34,13 +36,25 @@
 }
 .mat-divider {
   border-top-color: lightslategray;
-  width: 60%;
-}
-.director {
-  padding-right: 10px;
+  width: 100%;
 }
 span {
   color: white;
+}
+.rate {
+  font-size: 18px;
+}
+.rate-btn {
+  color: white;
+  width: 100px;
+  height: 35px;
+  margin-top: 10px;
+  margin-left: 7%;
+  margin-bottom: 40%;
+}
+.comment-section {
+  color: white;
+  margin-top: 5%;
 }
 h3 {
   color: white;

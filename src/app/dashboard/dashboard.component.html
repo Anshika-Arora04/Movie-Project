@@ -1,6 +1,11 @@
 <app-nav-bar></app-nav-bar>
 
-<div class="row content">
+<div class="row content" style="min-height: calc(100vh - 64px);">
+  <div class="row">
+    <div class="zoner col-1" *ngFor="let genre of genres">
+      <a mat-flat-button (click)="filterMoviesByTag(genre)"> {{genre}}</a>
+    </div>
+  </div>
   <div class="col-md-2 col-sm-5 mt-4 ml-6 mr-2" *ngFor="let movie of movies">
     <mat-card (click)="getMovieDetail(movie.id)">
       <div class="row">
@@ -15,5 +20,8 @@
               <h2 style="color: black;">No Data Found</h2>
             </div> -->
     </mat-card>
+  </div>
+  <div class="found" *ngIf="movies.length == 0">
+    <span>No movie found</span>
   </div>
 </div>

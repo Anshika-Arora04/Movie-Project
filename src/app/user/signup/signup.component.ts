@@ -48,6 +48,7 @@ export class SignupComponent implements OnInit {
       password: this.signUpForm.get('password').value,
       confirmPassword: this.signUpForm.get('confirmPassword').value,
       role: "USER",
+      userId: "2",
     }
     console.log(userDetails);
 

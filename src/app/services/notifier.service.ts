@@ -26,21 +26,21 @@ export class NotifierService {
       position: { top: '20px' },
       data: {
         message: msg,
+        dataType: 'delete'
       }
     });
   }
 
-  /*
-  Provide the dialog to rate the movie.
-  showRating(msg: string){
-    return this.matDialog.open(MatConfirmDialogComponent,{
-      width:'400px',
+  showRating(msg: string) {
+    return this.matDialog.open(MatConfirmDialogComponent, {
+      width: '400px',
       panelClass: 'confirm-dialog-container',
-      disableClose:true,
-      position:{top:'20px'},
-      data:{
-        message: msg
+      disableClose: true,
+      position: { top: '20px' },
+      data: {
+        message: msg,
+        dialogType: 'rating'
       }
     });
-  }*/
+  }
 }

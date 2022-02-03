@@ -4,6 +4,7 @@ import { NotifierService } from '../services/notifier.service';
 import { Movie } from '../model/movie';
 import { MovieService } from '../services/movie.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -20,7 +21,7 @@ export class NavBarComponent implements OnInit {
   searchName: string;
 
 
-  constructor(private notifier: NotifierService, private movieService: MovieService) { }
+  constructor(private notifier: NotifierService, private route: Router, private movieService: MovieService) { }
 
   ngOnInit(): void {
     this.role = localStorage.getItem('role');

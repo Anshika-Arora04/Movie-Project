@@ -1,0 +1,22 @@
+<div>
+  <textarea [(ngModel)]="comment"></textarea>
+  <br>
+  <button class="submit" type='submit' (click)="post(comment)">Submit</button>
+  <hr>
+  <div class="col-12">
+    <div class="comment-section">
+      <div class="comment">
+        <div class="row">
+          <div class="review" *ngFor="let comment of postComment">
+            <div class="review-section">
+              <p>{{comment.postComment}}</p>
+            </div>
+            <h5 class="commentUser">
+              By {{getUserNameById(comment.userId)}}, at {{comment.commentTime | date : 'short'}}
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

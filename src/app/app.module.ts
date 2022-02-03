@@ -10,7 +10,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDividerModule } from '@angular/material/divider';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/login/login.component';
@@ -29,6 +28,8 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
 import { ShowMovieComponent } from './show-movie/show-movie.component';
 import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { CommentComponent } from './comment/comment.component';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     AddMovieComponent,
     ShowMovieComponent,
     MatConfirmDialogComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    CommentComponent,
   ],
   imports: [
     BrowserModule,

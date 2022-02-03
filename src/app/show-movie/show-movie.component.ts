@@ -1,8 +1,5 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
 import { Movie } from '../model/movie';
 import { MovieService } from '../services/movie.service';
 import { NotifierService } from '../services/notifier.service';
@@ -14,12 +11,14 @@ import { NotifierService } from '../services/notifier.service';
 })
 export class ShowMovieComponent implements OnInit {
 
+
+
   movies: Movie[] = [];
   name: string;
   message: any;
 
-  constructor(private movieService: MovieService, private route: Router,
-    private matDialog: MatDialog, private notifier: NotifierService) { }
+
+  constructor(private movieService: MovieService, private notifier: NotifierService) { }
 
   ngOnInit(): void {
     this.getAllMovie();
