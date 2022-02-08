@@ -1,6 +1,6 @@
 <mat-toolbar style="background-color: black;">
-  <mat-icon style="background-color: white;" routerLink="dashboard" matTooltip="All Movies">dashboard</mat-icon>
-  <a mat-button style="color: white;" routerLink="dashboard">
+  <mat-icon style="background-color: white;" (click)="goToDashboard()" matTooltip="All Movies">dashboard</mat-icon>
+  <a mat-button style="color: white;" (click)="goToDashboard()">
     <h3>Movie</h3>
   </a>
   <div class="search-container">
@@ -16,10 +16,10 @@
     </div>
   </div>
   <div class="spacer"></div>
-  <a mat-button class="admin add" *ngIf="role =='ADMIN'" routerLink="add-movie">Add Movie</a>
-  <a mat-button class="admin show" *ngIf="role =='ADMIN'" routerLink="show-movie">Show Movie</a>
-  <a mat-button style="color: white;" *ngIf="!loggedIn()" routerLink="login" routerLinkActive="active">Log In</a>
-  <a mat-button style="color: white;" *ngIf="!loggedIn()" routerLink="signup" routerLinkActive="active">Sign Up</a>
+  <a mat-button class="admin add" *ngIf="role =='ADMIN'" (click)="goToAddMovie()">Add Movie</a>
+  <a mat-button class="admin show" *ngIf="role =='ADMIN'" (click)="goToShowMovie()">Show Movie</a>
+  <a mat-button style="color: white;" *ngIf="!loggedIn()" (click)="goToLogin()" routerLinkActive="active">Log In</a>
+  <a mat-button style="color: white;" *ngIf="!loggedIn()" (click)="goToSignUp()" routerLinkActive="active">Sign Up</a>
   <div *ngIf="loggedIn()" style="color: white; margin-right: 25px; font-size: 15px;">
     <a style="color: white;">
       Welcome {{this.user.name}}

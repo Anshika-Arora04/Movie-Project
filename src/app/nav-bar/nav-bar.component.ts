@@ -45,8 +45,25 @@ export class NavBarComponent implements OnInit {
 
   onLogOut() {
     this.notifier.showNotification("You're successfully logged out", "Dismiss");
+    this.route.navigate(['dashboard']);
     localStorage.removeItem('token');
     localStorage.removeItem('role');
     this.ngOnInit();
+
+  }
+  goToDashboard(){
+    this.route.navigate(['dashboard']);
+  }
+  goToLogin(){
+    this.route.navigate(['login'])
+  }
+  goToSignUp(){
+    this.route.navigate(['signup'])
+  }
+  goToAddMovie(){
+    this.route.navigate(['add-movie'])
+  }
+  goToShowMovie(){
+    this.route.navigate(['show-movie'])
   }
 }
