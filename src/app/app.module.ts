@@ -31,10 +31,6 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    AddMovieModule,
-    DashboardModule,
-    ShowMovieModule,
-    MovieDetailModule,
   ],
   providers: [
     AuthService,
